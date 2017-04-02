@@ -11,7 +11,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "jquery": "^3.2.1",
+        "jquery": "^3.2.1"
     },
     "devDependencies": {
         "autoprefixer": "^6.5.3",
@@ -31,20 +31,20 @@
         "gulp-if": "^2.0.1",
         "gulp-imagemin": "^3.0.3",
         "gulp-newer": "^1.2.0",
-        "gulp-notify": "^2.2.0",
+        "gulp-notify": "^3.0.0",
         "gulp-plumber": "^1.1.0",
         "gulp-postcss": "^6.1.1",
         "gulp-pug": "^3.3.0",
         "gulp-remember": "^0.3.1",
         "gulp-rename": "^1.2.2",
-        "gulp-shell": "^0.5.2",
-        "gulp-sourcemaps": "^1.6.0",
+        "gulp-shell": "^0.6.3",
+        "gulp-sourcemaps": "^2.5.0",
         "gulp-uglify": "^2.1.2",
         "merge-stream": "^1.0.0",
         "postcss-flexibility": "^1.1.0",
         "postcss-inline-svg": "^2.1.2",
-        "postcss-pxtorem": "^3.3.1",
+        "postcss-pxtorem": "^4.0.0",
         "precss": "^1.4.0",
-        "tmp": "0.0.24"
+        "tmp": "0.0.31"
     }
 }
