@@ -1,20 +1,17 @@
 {
-    "name": "realestate",
-    "version": "1.0.0",
+    "name": "simple-gulp-boilerplate",
+    "version": "0.0.1",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "casperjs test casper_tests",
         "start": "gulp start watch",
         "build": "NODE_ENV=production gulp build",
-        "precommit": "bash flake-test.sh && bash jshint-test.sh",
         "make-block": "babel-node tasks/make-block.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "autoprefixer": "^6.5.3",
-        "gulp-browserify": "^0.5.1",
         "jquery": "^3.2.1",
         "stylus": "^0.54.5",
         "stylus-loader": "^2.4.0",
@@ -22,7 +19,6 @@
     },
     "devDependencies": {
         "autoprefixer": "^6.5.1",
-        "babel": "^6.5.2",
         "babel-cli": "^6.24.0",
         "babel-core": "^6.21.0",
         "babel-plugin-transform-runtime": "^6.15.0",
@@ -33,6 +29,7 @@
         "fs": "^0.0.1-security",
         "gulp": "github:gulpjs/gulp#4.0",
         "gulp-babel": "^6.1.2",
+        "gulp-browserify": "^0.5.1",
         "gulp-clean-css": "^3.0.4",
         "gulp-if": "^2.0.1",
         "gulp-imagemin": "^3.0.3",
