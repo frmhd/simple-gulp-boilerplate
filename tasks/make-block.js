@@ -6,14 +6,14 @@ import { createInterface } from 'readline';
 const rl = createInterface(process.stdin, process.stdout);
 
 // folder with all blocks
-const BLOCKS_DIR = path.join(__dirname, '../app/templates/blocks/');
+const BLOCKS_DIR = path.join(__dirname, '../app/blocks/');
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 
 // default content for files in new block
 const fileSources = {
-	jade: `.{blockName}`,
-	styl: `.{blockName}\n    display block\n`
+	pug: `.{blockName}`,
+	pcss: `.{blockName} {\n    display: block;\n}`
 };
 
 function validateBlockName(blockName) {
@@ -75,6 +75,16 @@ function createFiles(blocksPath, blockName) {
 				})
 		);
 	});
+
+	const newImport = '\n@import: "../blocks/' + blockName + '/' + blockName + '.pcss";'
+
+	fs.appendFile('app/styles/main.pcss', newImport, function (err) {
+	  if (err) {
+	    err(`ERR>>> Failed to create a file '${filePath}'`)
+	  } else {
+	    ''
+	  }
+})
 
 	return Promise.all(promises);
 }

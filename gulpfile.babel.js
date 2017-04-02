@@ -20,7 +20,7 @@ lazyRequireTask("pug", "./tasks/pug", {
 });
 
 lazyRequireTask("styles", "./tasks/styles", {
-    src: "app/styles/main.styl"
+    src: "app/styles/main.pcss"
 });
 
 lazyRequireTask("js", "./tasks/js", {

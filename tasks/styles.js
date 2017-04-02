@@ -4,11 +4,11 @@ const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
 const gulpif = require("gulp-if");
 const browserSync = require("browser-sync");
-const stylus = require("gulp-stylus");
 const merge = require('merge-stream');
 const postcss = require("gulp-postcss");
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
+const rename = require("gulp-rename");
 const cleanCSS = require("gulp-clean-css");
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
@@ -24,14 +24,15 @@ module.exports = function(options) {
                 })
             }))
             .pipe(gulpif(isDevelopment, sourcemaps.init()))
-            .pipe(stylus())
             .pipe(postcss([
+                require('precss'),
                 require('autoprefixer')({
                     browsers: ['last 10 versions'],
                     cascade: false
                 })
             ]))
             .pipe(gulpif(isDevelopment, sourcemaps.write()))
+            .pipe(rename('main.css'))
             .pipe(gulpif(!isDevelopment, cleanCSS()))
             .pipe(gulp.dest("dist/styles"))
             .pipe(browserSync.stream());
