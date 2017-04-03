@@ -16,7 +16,7 @@ function lazyRequireTask(taskName, path, options) {
 }
 
 lazyRequireTask("pug", "./tasks/pug", {
-    src: ["app/**/*.pug", "!app/blocks/**/*.pug"]
+    src: ["app/pages/**/*.pug"]
 });
 
 lazyRequireTask("styles", "./tasks/styles", {
@@ -60,4 +60,4 @@ gulp.task("build",
 );
 
 gulp.task("start",
-    gulp.series("pug", "styles", "fonts", "js", "images", gulp.parallel("serve", "watch")));
+    gulp.series("clean", "pug", "styles", "fonts", "js", "images", gulp.parallel("serve", "watch")));
