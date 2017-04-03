@@ -31,8 +31,8 @@ module.exports = function(options) {
                     cascade: false
                 })
             ]))
-            .pipe(gulpif(isDevelopment, sourcemaps.write()))
             .pipe(rename('main.css'))
+            .pipe(gulpif(isDevelopment, sourcemaps.write()))
             .pipe(gulpif(!isDevelopment, cleanCSS()))
             .pipe(gulp.dest("dist/styles"))
             .pipe(browserSync.stream());

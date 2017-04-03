@@ -34,7 +34,7 @@ lazyRequireTask("fonts", "./tasks/fonts", {
 });
 
 lazyRequireTask("images", "./tasks/images", {
-    src: "app/images/**",
+    src: "app/**/*.{jpg,jpeg,png}",
     dest: "dist/images/"
 });
 
@@ -56,8 +56,8 @@ lazyRequireTask("watch", "./tasks/watch");
 lazyRequireTask("build", "./tasks/build");
 
 gulp.task("build",
-    gulp.series("clean", gulp.parallel("pug", "styles", "fonts", "js"))
+    gulp.series("clean", gulp.parallel("pug", "styles", "fonts", "js", "images"))
 );
 
 gulp.task("start",
-    gulp.series("pug", "styles", "fonts", "js", gulp.parallel("serve", "watch")));
+    gulp.series("pug", "styles", "fonts", "js", "images", gulp.parallel("serve", "watch")));
