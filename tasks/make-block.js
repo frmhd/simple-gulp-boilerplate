@@ -76,7 +76,7 @@ function createFiles(blocksPath, blockName) {
 		);
 	});
 
-	const newImport = '\n@import: "../blocks/' + blockName + '/' + blockName + '.pcss";'
+	const newImport = '\n@import "../blocks/' + blockName + '/' + blockName + '.pcss";'
 
 	fs.appendFile('app/styles/main.pcss', newImport, function (err) {
 	  if (err) {

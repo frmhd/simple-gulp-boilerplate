@@ -1,5 +1,6 @@
 "use strict";
 
+const fs = require("fs");
 const gulp = require("gulp");
 const sourcemaps = require("gulp-sourcemaps");
 const gulpif = require("gulp-if");
@@ -10,6 +11,7 @@ const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const rename = require("gulp-rename");
 const cleanCSS = require("gulp-clean-css");
+const atImport = require("postcss-import");
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
@@ -25,7 +27,9 @@ module.exports = function(options) {
             }))
             .pipe(gulpif(isDevelopment, sourcemaps.init()))
             .pipe(postcss([
+                atImport(),
                 require('precss'),
+                require('lost'),
                 require('autoprefixer')({
                     browsers: ['last 10 versions'],
                     cascade: false

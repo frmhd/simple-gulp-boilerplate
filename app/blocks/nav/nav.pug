@@ -1,0 +1,8 @@
+mixin item(title, url)
+  li
+    a.main-nav__item(href=url, class=active == title ? 'main-nav__item_active' : '')= title
+
+nav.nav
+  ul.main-nav
+    +item('Home', '/')
+    +item('About', '/pages/about.html')

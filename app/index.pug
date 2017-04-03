@@ -10,6 +10,8 @@ html.no-js(lang='')
     // Place favicon.ico in the root directory
     link(rel='stylesheet', href='/styles/main.css')
   body
+    block page_id
+      - var active = 'Home'
 
     block header
       include blocks/header/header.pug
