@@ -1,0 +1,122 @@
+$ff: Roboto, sans-serif;
+
+body {
+  background-color: #f5f3f3;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-content: stretch;
+  min-height: 100vh;
+  font-family: $ff;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+$border: 10vh;
+$border-color: rgba(255,255,255, .03);
+
+.core {
+  margin: 0;
+  border: $border solid $border-color;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: $border;
+    height: 100vh;
+    background-color: $border-color;
+  }
+
+  &:after {
+    left: 0;
+  }
+
+  &:before {
+    right: 0;
+  }
+
+  &__content {
+    width: auto;
+  }
+
+  &__title {
+    color: #000;
+    font-weight: 300;
+    font-size: 80px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-family: $ff;
+    letter-spacing: 1px;
+
+    @media screen and (max-width: 500px) {
+      font-size: 15vw;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__contacts {
+    margin: 0;
+    list-style: none;
+    font-size: 16px;
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+
+        @media screen and (max-width: 500px) {
+          margin: 0;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #0275d8;
+      display: inline-block;
+      padding: 2px 0;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid #0275d8;
+
+        @media screen and (max-width: 500px) {
+          border-color: transparent;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        padding: 10px 0;
+      }
+    }
+    svg {
+      height: 16px;
+      margin-right: 2px;
+      fill: rgba(2, 117, 215, 0.63);
+    }
+  }
+}

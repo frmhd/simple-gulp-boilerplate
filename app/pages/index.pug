@@ -9,18 +9,20 @@ html.no-js(lang='')
     link(rel='apple-touch-icon', href='apple-touch-icon.png')
     // Place favicon.ico in the root directory
     link(rel='stylesheet', href='/styles/main.css')
+    link(href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;subset=cyrillic", rel="stylesheet")
   body
     block page_id
       - var active = 'Home'
 
-    block header
-      include ../blocks/header/header.pug
-
     block content
-      h1
-        a(href="/about") вторая страница
+      main.core
+        .core__content
+          h1.h1.core__title robohead
+          ul.core__contacts
+            li: a(href="tel:+79095880138") +7(909)588-01-38
+            li: a(href="mailto:hi@robohead.ru") hi@robohead.ru
+            li
+              include ../blocks/core/telegram.svg
+              a(href="https://telegram.me/robohead") @robohead
 
-    block footer
-      include ../blocks/footer/footer.pug
-
-      script(src='/js/main.js')
+    script(src='/js/main.js')
